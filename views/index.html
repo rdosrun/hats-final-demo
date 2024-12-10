@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcadian Outfitters</title>
+         <link rel="stylesheet"  type="text/css" href="/style/style.css">
+         <link rel="stylesheet"  type="text/css" href="/style/headerbar.css">
+         <link rel="stylesheet"  type="text/css" href="/style/qr_style.css">
+        <link  rel="stylesheet"  type="text/css" href="/style/aboutus.css">
+        <script src="/script/page_route.js"></script>
+    </head>
+<body>
+    <!-- Header Bar -->
+    <headerbar class="header-bar">
+    <div class="logo">
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><button class="nav-btn" onclick="loadPage('/landing.html')">Home</button></li>
+        <li><button class="nav-btn" onclick="loadPage('/products.html')">Products</button></li>
+        <li><button class="nav-btn" onclick="loadPage('/about.html')">About Us</button></li>
+        <li><button class="nav-btn" onclick="loadPage('/contact.html')">Contact</button></li>
+        <li><button class="nav-btn" onclick="loadPage('/re-order.html')">Re-Order</button></li>
+        <li><button class="nav-btn" onclick="loadPage('/locator.html')">Store Locator</button></li>
+        </ul>
+    </nav>
+    <div class="cta-btn dropdown">
+      <div>Cart</div>
+    <ul id="cart-items" class="dropdown-content">
+    </ul>
+    </div>
+  </headerbar>
+  <!-- Main Page -->
+  <!-- Hero Section -->
+  <div id="main-page">
+    <header class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Arcadian Outfitters!</h1>
+      <p>love where you live</p>
+      <a href="#products" class="cta-btn">Shop Now</a>
+    </div>
+  </header>
+    </div>
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Arcadian Outfitters. All rights reserved.</p>
+    <p>Follow us on <a href="https://www.instagram.com/arcadianoutfitters/">Instagram</a> | <a href="#">Facebook</a></p>
+  </footer>
+</body>
+</html>
+
+<script src="https://unpkg.com/@ericblade/quagga2@1.8.4/dist/quagga.min.js"></script>
+<script src="/script/script.js"></script>
+<script src="/script/image_route.js"></script>
+<script src="/script/store.js"></script>
