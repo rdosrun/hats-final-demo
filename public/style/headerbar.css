@@ -1,3 +1,64 @@
+/* Media query for phones */
+@media screen and (min-width: 1000px) {
+  .toggle-btn {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .nav-links ul li a {
+    text-align: center;
+    display: block;
+    padding: 10px;
+  }
+
+  .toggle-btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .toggle-btn:focus {
+    outline: none;
+  }
+}
+
+
 /* Header Bar Styles */
 .header-bar {
   display: flex;
