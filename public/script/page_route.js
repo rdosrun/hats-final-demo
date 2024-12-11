@@ -16,10 +16,11 @@ function loadPage(route) {
             }
         });
     const navLinks = document.querySelector('.nav-links');
-  if (navLinks) {
-    navLinks.style.display = 'none'; // Explicitly hide the nav-links
-  }
+      if (navLinks && navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active'); // Remove the "active" class to hide it
+    }
 }
+
 
 function loadScriptDynamically(src) {
   console.log("Loading script: " + src);
