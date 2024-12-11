@@ -1,3 +1,17 @@
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    height: auto; /* Allow the section to adapt to the content height */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding-top: 60px; /* Ensure it doesn't overlap with the header bar */
+  }
+
+  .hero-content {
+    transform: translateY(0); /* Reset any offset */
+    padding: 20px; /* Add spacing for readability */
+  }
+}
+
 /* Reset some default browser styles */
 * {
   margin: 0;
@@ -24,7 +38,7 @@ body {
 }
 
 .hero-content {
- transform: translateY(-100%);
+ //transform: translateY(-100%);
 }
 .hero-content h1 {
   font-size: 3rem;
