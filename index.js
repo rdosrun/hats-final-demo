@@ -32,6 +32,17 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
+app.get('/views/:page', (req, res) => {
+    const page = req.params.page;
+    const filePath = path.join(__dirname, 'views', `${page}.html`);
+    console.log(filePath);
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            res.status(404).send('Page not found');
+        }
+    });
+});
+
 // Example API endpoint
 app.get('/api/greeting', (req, res) => {
     res.json({ message: 'Hello, world!' });
