@@ -1,16 +1,29 @@
 // routing function
 //
 function loadPage(route) {
+    console.log("Loading page: " + route);
     fetch(route)
         .then((response) => response.text())
         .then((html) => {
             document.getElementById("main-page").innerHTML = html
         }).then(() => {
 
-            if (route == "/re-order.html") {
+            if (route == "/re-order") {
                 start_scan();
             }
+            if (route == "/views/products") {
+                loadScriptDynamically("/product.js");
+            }
         })
+}
+
+function loadScriptDynamically(src) {
+  console.log("Loading script: " + src);
+  const script = document.createElement('script');
+  script.src = src; // URL of the JavaScript file
+  script.type = 'text/javascript';
+  script.async = true; // Optional: to load the script asynchronously
+  document.head.appendChild(script); // Append to <head> or <body>
 }
 
 var total_hats = 50;

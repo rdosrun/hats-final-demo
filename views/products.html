@@ -1,5 +1,6 @@
 <div class="page-container">
-<div class="sidebar">
+<div class="sidebar" id="checkbox-sidebar">
+    <button class="toggle-checkbox-btn" onclick="toggleCheckboxContainer()">Toggle Filters</button>
         <h2>Filter by State</h2>
         <form id="checkbox-container">
             <label><input type="radio" name="state" id="state-ID" value="ID" onClick="console.log('clicked');update_hats();console.log('clicked2')"> ID</label>

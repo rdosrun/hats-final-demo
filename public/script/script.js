@@ -1,5 +1,9 @@
    document.addEventListener("DOMContentLoaded", () => {
     });
+function toggleCheckboxContainer() {
+  const checkboxContainer = document.getElementById('checkbox-container');
+  checkboxContainer.classList.toggle('active');
+}
 
 function start_scan(){
     console.log("DOM loaded");
