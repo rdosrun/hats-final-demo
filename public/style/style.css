@@ -1,3 +1,33 @@
+@media screen and (max-width: 768px) {
+  .store-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for small screens */
+    gap: 10px; /* Reduce spacing for smaller viewports */
+    padding: 10px; /* Add padding for better layout on small screens */
+    width: 100%; /* Ensure it spans the full width */
+  }
+
+  .item {
+    width: 100%; /* Items take full width within the grid */
+    height: auto; /* Adjust height to content */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .item img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Keep aspect ratio */
+  }
+
+  .item .price {
+    font-size: 14px; /* Slightly smaller font for better fit */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .store-items {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+}
 
 @media screen and (max-width: 768px) {
   .hero-section {
