@@ -1,4 +1,7 @@
- const video = document.getElementById('video');
+
+
+function startScan() {
+        const video = document.getElementById('video');
         let stream;
 
         // Access the user's camera
@@ -12,6 +15,8 @@
                 console.error('Error accessing the camera: ', err);
                 alert('Unable to access camera. Please check permissions or try a different device.');
             });
+
+}
 
         function initializeQuagga() {
             Quagga.init({
