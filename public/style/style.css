@@ -264,6 +264,7 @@ footer a:hover {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    flex: 1;
 }
 
 .info-section {
@@ -322,5 +323,5 @@ footer a:hover {
         }
 
 .page-container {
-    display: inline-flex;
+    display: flex;
 }
