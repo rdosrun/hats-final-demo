@@ -27,6 +27,12 @@
   }
   .sidebar {
     height: fit-content !important;
+    width: 100% !important;
+    z-index: 10000 !important;
+  }
+ .page-container {
+    display: flex !important;
+    flex-direction: column;
   }
 }
 
