@@ -15,6 +15,16 @@ function addToCart(button) {
     updateCart();
 }
 
+function addToCartManual(itemName) {
+    // Get the item details from the page
+    const item = document.getElementById("product_id").getvalue();
+    // Add the item to the cart
+    cart.push({ name: itemName, ID: item });
+
+    // Update the cart display
+    updateCart();
+}
+
 function updateCart() {
     // Get the cart items list and clear it
     const cartItems = document.getElementById('cart-items');

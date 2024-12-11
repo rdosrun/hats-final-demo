@@ -47,26 +47,6 @@ function domReady(fn) {
     }
 }
 
-function order() {
-    var store_id = document.getElementById("store_id").value;
-    var product_id = document.getElementById("product_id").value;
-    console.log(store_id, product_id);
-    if (store_id == "" && product_id == "") {
-        alert("please enter store ID and product ID");
-        return false;
-    }
-    fetch("/order", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            store_id: store_id,
-            product_id: product_id,}),
-    })
-    .then((response) => {alert("order placed")})
-
-}
 
 function hideDiv(event) {
     const parentElement = event.target.parentElement;
