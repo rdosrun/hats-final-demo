@@ -39,6 +39,8 @@ function StartScanner(){
 }
 
 function stopScanner() {
+            const startScanButton = document.getElementById('start-scan');
+            const scannerContainer = document.getElementById('scanner-container');
             Quagga.stop();
             scannerContainer.style.display = 'none';
             startScanButton.style.display = 'block';
