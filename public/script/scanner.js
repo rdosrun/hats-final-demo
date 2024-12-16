@@ -11,7 +11,7 @@ function StartScanner(){
                     inputStream: {
                         name: "Live",
                         type: "LiveStream",
-                        target: scannerContainer, // Use the #scanner-container div
+                        target: scanner-container, // Use the #scanner-container div
                     },
                     decoder: {
                         readers: ["code_128_reader", "ean_reader", "ean_8_reader", "upc_reader", "upc_e_reader"], // Add more if needed
