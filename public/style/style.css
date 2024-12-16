@@ -219,8 +219,6 @@ body {
 .product-card img {
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #f4f4f4;
-  margin-bottom: 1rem;
 }
 
 .product-card h3 {

@@ -8,8 +8,8 @@ function loadPage(route) {
             document.getElementById("main-page").innerHTML = html
         }).then(() => {
 
-            if (route == "/re-order") {
-                start_scan();
+            if (route == "/views/re-order") {
+            StartScanner();
             }
             if (route == "/views/products") {
                 loadScriptDynamically("/product.js");
