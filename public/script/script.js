@@ -3,8 +3,9 @@
     });
     window.onload = function() {
     if (sessionStorage.getItem('msalLoggedIn')) {
-      document.getElementById('login-section').style.display = 'none';
-      document.getElementById('private-links').style.display = 'block';
+   console.log("Logged in");
+    //   document.getElementById('login-section').style.display = 'none';
+     // document.getElementById('private-links').style.display = 'block';
     }
   };
   const msalConfig = {
