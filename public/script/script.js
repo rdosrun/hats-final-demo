@@ -1,5 +1,12 @@
    document.addEventListener("DOMContentLoaded", () => {
+
     });
+    window.onload = function() {
+    if (sessionStorage.getItem('msalLoggedIn')) {
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('private-links').style.display = 'block';
+    }
+  };
   const msalConfig = {
     auth: {
       clientId: '95e880e8-e54d-4d01-a26c-052cff7e9592', // Replace with your application ID
