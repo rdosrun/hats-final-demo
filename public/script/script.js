@@ -34,7 +34,7 @@
   }
 
   function signOut() {
-    msalInstance.logout();
+    await msalInstance.logoutPopup();
     sessionStorage.removeItem('msalLoggedIn');
     document.getElementById('login-section').style.display = 'block';
     document.getElementById('logout-section').style.display = 'none';
