@@ -26,6 +26,7 @@
       });
       sessionStorage.setItem('msalLoggedIn', true);
       document.getElementById('login-section').style.display = 'none';
+      document.getElementById('logout-section').style.display = 'block';
       document.getElementById('private-links').style.display = 'block';
     } catch (error) {
       console.error(error);
@@ -36,6 +37,7 @@
     msalInstance.logout();
     sessionStorage.removeItem('msalLoggedIn');
     document.getElementById('login-section').style.display = 'block';
+    document.getElementById('logout-section').style.display = 'none';
     document.getElementById('private-links').style.display = 'none';
   }
 
