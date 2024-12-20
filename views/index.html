@@ -16,6 +16,18 @@
     <div class="logo">
     </div>
     <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div id="login-section">
+    <button onclick="signIn()">Login with Microsoft</button>
+    </div>
+
+  <div id="private-links" style="display: none;">
+    <p>Welcome! Here are your private links:</p>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <button onclick="signOut()">Logout</button>
+
+  </div>
     <nav class="nav-links">
       <ul>
         <li><button class="nav-btn" onclick="loadPage('/views/landing')">Home</button></li>

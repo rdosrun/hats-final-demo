@@ -1,6 +1,36 @@
    document.addEventListener("DOMContentLoaded", () => {
     });
-function toggleCheckboxContainer() {
+  const msalConfig = {
+    auth: {
+      clientId: 'a0df89da-e117-48bd-84d3-376b3b0df411', // Replace with your application ID
+      authority: 'https://login.microsoftonline.com/6ba30675-1170-422f-89c3-0a43af4a4534', // Replace with your tenant ID
+      redirectUri: window.location.origin
+    }
+  };
+
+  const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+  async function signIn() {
+    try {
+      const loginResponse = await msalInstance.loginPopup({
+        scopes: ['User.Read']
+      });
+      sessionStorage.setItem('msalLoggedIn', true);
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('private-links').style.display = 'block';
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function signOut() {
+    msalInstance.logout();
+    sessionStorage.removeItem('msalLoggedIn');
+    document.getElementById('login-section').style.display = 'block';
+    document.getElementById('private-links').style.display = 'none';
+  }
+
+   function toggleCheckboxContainer() {
   const checkboxContainer = document.getElementById('checkbox-container');
   checkboxContainer.classList.toggle('active');
 }
