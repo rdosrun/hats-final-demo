@@ -18,6 +18,7 @@
 
   const msalInstance = new msal.PublicClientApplication(msalConfig);
 
+   //this one gets called when sign in happens
   async function signIn() {
     try {
       const loginResponse = await msalInstance.loginPopup({
