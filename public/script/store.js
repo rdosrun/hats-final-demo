@@ -54,4 +54,15 @@ function createRemoveButton(index) {
     };
     return button;
 }
+function make_pdf(){
+    const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
 
+      // Add each item from the array to the PDF
+      cart.forEach((item, index) => {
+        doc.text(item.name, 10, 10 + item.ID * 10); // Adjust y-position for each item
+      });
+
+      // Save the PDF
+      doc.save('generated.pdf');
+}

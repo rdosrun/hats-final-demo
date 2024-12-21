@@ -46,7 +46,9 @@
   checkboxContainer.classList.toggle('active');
 }
 
-function start_scan(){
+
+
+/*function start_scan(){
     console.log("DOM loaded");
       const videoElement = document.getElementById('barcode-scanner');
       const resultElement = document.getElementById('result');
@@ -79,7 +81,7 @@ function start_scan(){
         resultElement.innerText = `Barcode Detected: ${code}`;
         Quagga.stop(); // Stop scanning once a barcode is detected
       });
-}
+}*/
 
 function domReady(fn) {
     if (
