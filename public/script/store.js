@@ -60,6 +60,7 @@ function make_pdf(){
 
       // Add each item from the array to the PDF
       cart.forEach((item, index) => {
+        console.log(item);
         doc.text(item.name, 10, 10 + item.ID * 10); // Adjust y-position for each item
       });
 
