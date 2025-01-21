@@ -17,12 +17,6 @@
     </div>
     <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
 
-    <div id="login-section">
-    <button onclick="signIn()">Login with Microsoft</button>
-    </div>
-    <div id="logout-section" style="display: none;">
-        <button onclick="signOut()">Logout</button>
-    </div>
     <nav class="nav-links">
       <ul>
         <li><button class="nav-btn" onclick="loadPage('/views/landing')">Home</button></li>
@@ -35,10 +29,13 @@
         <li><button class="nav-btn" onclick="loadPage('/views/store_locator')">Store Locator</button></li>
         </ul>
     </nav>
-    <div class="cta-btn dropdown">
+    <div class="switch">
+        <button onclick="signIn()">Login with Microsoft</button>
+    <div class="cta-btn dropdown" id="cart" style="display: none;">
       <div>Cart</div>
     <ul id="cart-items" class="dropdown-content">
     </ul>
+    </div>
     </div>
   </headerbar>
   <!-- Main Page -->

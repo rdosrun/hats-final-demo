@@ -25,9 +25,7 @@
         scopes: ['User.Read']
       });
       sessionStorage.setItem('msalLoggedIn', true);
-      document.getElementById('login-section').style.display = 'none';
-      document.getElementById('logout-section').style.display = 'block';
-      document.getElementById('private-links').style.display = 'block';
+      document.getElementById('cart').style.display = 'block';
     } catch (error) {
       console.error(error);
     }
