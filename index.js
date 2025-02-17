@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 // Enable CORS for all routes
 app.use(cors());
 let corsOptions = {
-    origin: [ 'http://localhost:5500', 'http://localhost:3000' ]
+    origin: [ 'http://localhost:5500', 'http://localhost:3000', ' https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fmicrosoft%2Fcallback&scope=user.read&client_id=9be46b90-c89c-4753-8866-164131358ba6' ]
 };
 
 // Passport configuration
