@@ -76,7 +76,7 @@ app.get('/auth/microsoft/callback', passport.authenticate('microsoft', {
 });
 
 // Example endpoint that requires Microsoft OAuth login
-app.get('/profile', passport.authenticate('microsoft', { session: false }), (req, res) => {
+app.get('/profile', passport.authenticate('microsoft'), (req, res) => {
     res.json({ profile: req.user });
 });
 
