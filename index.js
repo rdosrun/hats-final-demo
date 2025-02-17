@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Enable CORS for all routes
-app.use(cors());
-let corsOptions = {
-    origin: [ 'http://localhost:5500', 'http://localhost:3000', ' https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fmicrosoft%2Fcallback&scope=user.read&client_id=9be46b90-c89c-4753-8866-164131358ba6' ]
+const corsOptions = {
+    origin: ['*']
 };
+app.use(cors(corsOptions));
 
 // Passport configuration
 passport.use(new MicrosoftStrategy({
@@ -77,7 +77,7 @@ app.get('/auth/microsoft/callback', passport.authenticate('microsoft', {
 });
 
 // Example endpoint that requires Microsoft OAuth login
-app.get('/profile', passport.authenticate('microsoft', { session: false }),cors(corsOptions), (req, res) => {
+app.get('/profile', passport.authenticate('microsoft', { session: false }), (req, res) => {
     res.json({ profile: req.user });
 });
 
