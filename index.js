@@ -13,11 +13,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Enable CORS for all routes
-const corsOptions = {
-    origin: ['*']
-};
-app.use(cors(corsOptions));
+
+app.use(cors({
+    origin: '*', // Allow all origins
+}));
 
 // Passport configuration
 passport.use(new MicrosoftStrategy({
