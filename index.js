@@ -38,32 +38,21 @@ app.use(passport.initialize());
 
 // Serve static files (e.g., CSS, JavaScript, images) from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
-/*
-// Route for unauthorized users
-app.get('/unauthorized', (req, res) => {
-    res.status(401).json({ error: 'Unauthorized access' });
+
+
+
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function (req, res, next) {
+    res.render('index', {
+        title: 'MSAL Node & Express Web App',
+        isAuthenticated: req.session.isAuthenticated,
+        username: req.session.account?.username,
+    });
 });
 
-// Microsoft OAuth login route
-app.get('/auth/microsoft', passport.authenticate('microsoft'));
-
-// Microsoft OAuth callback route
-app.get('/auth/microsoft/callback', passport.authenticate('microsoft', {
-    failureRedirect: '/unauthorized'
-}), (req, res) => {
-    res.redirect('/');
-});
-
-// Example endpoint that requires Microsoft OAuth login
-app.get('/profile', passport.authenticate('microsoft'), (req, res) => {
-    res.json({ profile: req.user });
-});
-
-// Handle 404 errors for unrecognized routes
-app.use((req, res) => {
-    res.status(404).send('Page not found');
-});*/
-
+module.exports = router;
 
 
 // Start the server
