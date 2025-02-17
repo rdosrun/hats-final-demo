@@ -69,6 +69,11 @@ app.get('/auth/microsoft/callback', passport.authenticate('microsoft', {
     res.redirect('/');
 });
 
+// Example endpoint that requires Microsoft OAuth login
+app.get('/profile', passport.authenticate('microsoft', { session: false }), (req, res) => {
+    res.json({ profile: req.user });
+});
+
 // Handle 404 errors for unrecognized routes
 app.use((req, res) => {
     res.status(404).send('Page not found');

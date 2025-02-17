@@ -1,4 +1,4 @@
-   document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     });
     window.onload = function() {
@@ -44,42 +44,23 @@
   checkboxContainer.classList.toggle('active');
 }
 
-
-
-/*function start_scan(){
-    console.log("DOM loaded");
-      const videoElement = document.getElementById('barcode-scanner');
-      const resultElement = document.getElementById('result');
-    console.log(videoElement);
-
-      // Initialize Quagga
-      Quagga.init({
-        inputStream: {
-          type: "LiveStream",
-          target: videoElement, // The video element
-          constraints: {
-            facingMode: "environment" // Use the back camera
-          }
-        },
-        decoder: {
-          readers: ["code_128_reader", "ean_reader", "ean_8_reader", "upc_reader"]
+async function fetchProfile() {
+    try {
+        const response = await fetch('/profile', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-      }, (err) => {
-        if (err) {
-          console.error(err);
-          resultElement.innerText = "Error initializing barcode scanner.";
-          return;
-        }
-        Quagga.start();
-      });
-
-      // Listen for barcode detection
-      Quagga.onDetected((data) => {
-        const code = data.codeResult.code;
-        resultElement.innerText = `Barcode Detected: ${code}`;
-        Quagga.stop(); // Stop scanning once a barcode is detected
-      });
-}*/
+        const profile = await response.json();
+        console.log('Profile:', profile);
+    } catch (error) {
+        console.error('Error fetching profile:', error);
+    }
+}
 
 function domReady(fn) {
     if (
