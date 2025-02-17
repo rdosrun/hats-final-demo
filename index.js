@@ -9,12 +9,13 @@ const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
 const pageRoutes = require('./routes/pages');
+// Create an instance of an Express app
+const app = express();
 
 app.use('/api', apiRoutes);
 app.use('/', authRoutes);
 app.use('/', pageRoutes);
-// Create an instance of an Express app
-const app = express();
+
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
