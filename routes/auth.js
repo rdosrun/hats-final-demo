@@ -5,7 +5,7 @@
 
 var express = require('express');
 
-const authProvider = require('../auth/AuthProvider');
+const authProvider = require('./AuthProvider');
 const { REDIRECT_URI, POST_LOGOUT_REDIRECT_URI } = require('../authConfig');
 
 const router = express.Router();
