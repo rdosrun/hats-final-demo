@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const passport = require('passport');
 const MicrosoftStrategy = require('passport-microsoft').Strategy;
+const cors = require('cors');
 
 // Create an instance of an Express app
 const app = express();
@@ -11,6 +12,9 @@ const app = express();
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Passport configuration
 passport.use(new MicrosoftStrategy({
