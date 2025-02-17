@@ -12,19 +12,17 @@ const pageRoutes = require('./routes/pages');
 // Create an instance of an Express app
 const app = express();
 
-app.use('/api', apiRoutes);
-app.use('/', authRoutes);
-app.use('/', pageRoutes);
-
+app.use(cors({
+    origin: '*', // Allow all origins
+}));
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-app.use(cors({
-    origin: '*', // Allow all origins
-}));
+app.use('/api', apiRoutes);
+app.use('/', authRoutes);
+app.use('/', pageRoutes);
 
 // Passport configuration
 passport.use(new MicrosoftStrategy({
