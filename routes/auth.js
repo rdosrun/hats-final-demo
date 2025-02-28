@@ -8,6 +8,10 @@ var express = require('express');
 const authProvider = require('./AuthProvider');
 //const { REDIRECT_URI, POST_LOGOUT_REDIRECT_URI } = require('../authConfig');
 
+const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:3000/auth/microsoft/callback';
+const POST_LOGOUT_REDIRECT_URI = process.env.POST_LOGOUT_REDIRECT_URI || 'http://localhost:3000/';
+
+
 const router = express.Router();
 
 router.get('/signin', authProvider.login({
